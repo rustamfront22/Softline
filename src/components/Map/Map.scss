@@ -1,0 +1,169 @@
+.map-section {
+    &__content {
+        width: 100%;
+        position: relative;
+        &-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 90px;
+            padding: 30px 70px;
+            overflow: auto;
+            padding: 28px 70px;
+            box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.06);
+
+            &::-webkit-scrollbar {
+                height: 0px;
+                width: 0px;
+            }
+            @media (max-width: 768px) {
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 30px 5px;
+                gap: 30px;
+            }
+            @media (max-width: 320px) {
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 20px;
+            }
+        }
+        .burger-map{
+            color: #444;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 100%;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-map {
+            display: flex;
+            gap: 30px;
+            transition: 0.5s;
+            white-space: nowrap;
+            ul {
+                display: flex;
+                gap: 30px;
+
+                @media (max-width: 320px) {
+                    gap: 16px;
+                }
+
+                li {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    button {
+                        color: #444;
+                        font-size: 18px;
+                        font-weight: 600;
+                        line-height: 20px;
+                        background: none;
+
+                        @media (max-width: 320px) {
+                            font-size: 14px;
+                            line-height: 16px;
+                        }
+                    }
+
+                    ::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        border-bottom: 3px solid #a30c33;
+                        transform: scale(1.2);
+                        opacity: 0;
+                        margin-top: 30px;
+                        transition: 0.5s;
+                    }
+
+                    :hover::before {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .map-dropdown{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.06);
+            padding: 28px 70px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            @media (max-width: 768px) {
+                padding: 30px 5px;
+            }
+            &.active{
+                top: calc(100% + 20px);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &__list{
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                gap: 24px;
+                @media (max-width: 1099px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                @media (max-width: 576px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+            }
+            &__item{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                &:hover{
+                    h4{color: #A30C33;}
+                    ul{
+                        visibility: visible;
+                        opacity: 1;
+                        height: auto;
+                        transition: 0.5s;
+                    }
+                }
+                h4{
+                    color: #444;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 20px; 
+                    white-space: nowrap;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                }
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    @media (max-width: 768px) {
+                        visibility: hidden;
+                        opacity: 0;
+                        height: 0;
+                    }
+                }
+                li{
+                    color: #444;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    cursor: pointer;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.firstscreen {
+    &-content {
+        background-image: url("@/assets/images/first-screen.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        padding: 158px 0 158px 70px;
+        
+        @media (max-width: 520px) {
+            padding: 100px 0 100px 15px;
+            align-items: flex-start;
+        }
+        @media (max-width: 320px) {
+            padding: 40px 0 40px 5px;
+            align-items: flex-start;
+        }
+        h1 {
+            color: #444;
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 100%;
+            margin-bottom: 60px;
+            
+            @media (max-width: 520px) {
+                font-size: 40px;
+                font-weight: 600;
+                line-height: 100%;
+                margin-bottom: 50px;
+                flex-wrap: wrap;
+            }
+            @media (max-width: 320px) {
+                font-size: 29px;
+                font-weight: 600;
+                line-height: 100%;
+                margin-bottom: 10px;
+                flex-wrap: wrap;
+            }
+        }
+
+        a {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 20px;
+            display: flex;
+            .btn {
+                color: #fff;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+                background: #b01736;
+                padding: 18px 28px;
+            }
+            :hover {
+                border-radius: 8px;
+                background: #d43152;
+                transition: 400ms;
+            }
+            @media (max-width: 320px) {
+                .btn {
+                    padding: 13px 35px;
+                }
+            }
+        }
+    }
+}

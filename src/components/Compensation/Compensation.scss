@@ -1,0 +1,168 @@
+.compensation {
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 145px;
+
+        &-info {
+            h2 {
+                color: #444;
+                text-align: center;
+                font-size: 56px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 100%;
+                margin-bottom: 50px;
+
+                @media (max-width: 425px) {
+                    font-size: 32px;
+                }
+
+                @media (max-width: 320px) {
+                    font-size: 28px;
+                    font-weight: 600;
+                    line-height: 100%;
+                }
+            }
+
+            &__box {
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: 50px;
+                    text-align: center;
+
+                    @media (max-width: 768px) {
+                        grid-template-columns: repeat(6, 1fr);
+                    }
+
+                    @media (max-width: 567px) {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+
+                    li {
+                        align-items: center;
+                        color: #444;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 110%;
+
+                        @media (max-width: 768px) {
+                            grid-column: span 2;
+
+                            &:last-child:nth-child(3n - 1) {
+                                grid-column-end: -2;
+                            }
+
+                            &:nth-last-child(2):nth-child(3n + 1) {
+                                grid-column-end: 4;
+                            }
+
+                            /* Dealing with single orphan */
+
+                            &:last-child:nth-child(3n - 2) {
+                                grid-column-end: 5;
+                            }
+                        }
+
+                        @media (max-width: 567px) {
+                            grid-column: span 2;
+
+                            &:last-child:nth-child(3n - 1) {
+                                grid-column-end: -2;
+                            }
+
+                            &:nth-last-child(2):nth-child(3n + 1) {
+                                grid-column-end: auto;
+                            }
+                        }
+
+                        p {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-additional {
+            h2 {
+                color: #444;
+                text-align: center;
+                font-size: 40px;
+                font-weight: 600;
+                line-height: 120%;
+                margin-bottom: 4px;
+
+                @media (max-width: 425px) {
+                    font-size: 32px;
+                }
+
+                @media (max-width: 320px) {
+                    font-size: 28px;
+                }
+            }
+
+            span {
+                color: #b01736;
+                text-align: center;
+                font-size: 40px;
+                font-weight: 600;
+                line-height: 120%;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 50px;
+
+                @media (max-width: 425px) {
+                    font-size: 32px;
+                }
+
+                @media (max-width: 320px) {
+                    font-size: 28px;
+                }
+            }
+
+            &__box {
+
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 50px;
+                    text-align: center;
+
+                    @media (max-width: 425px) {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+
+                    @media (max-width: 365px) {
+                        grid-template-columns: 1fr;
+                    }
+
+
+                    li {
+                        text-align: center;
+
+                        @media (max-width: 425px) {
+                            grid-column: span 2;
+
+                            &:last-child:nth-child(2n - 1) {
+                                grid-column-end: -2;
+                            }
+                        }
+
+                        @media (max-width: 365px) {
+                            grid-column: 1;
+                        }
+
+                        p {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
