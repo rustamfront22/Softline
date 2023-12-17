@@ -99,23 +99,26 @@
     &-info {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 180px;
         justify-items: center;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
         @media (max-width: 756px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
         div {
+            
             p {
                 color: #a30c33;
                 font-size: 80px;
                 font-weight: 600;
                 line-height: 80%;
                 @media (max-width: 500px) {
-                    font-size: 60px;
+                    font-size: 40px;
                 }
                 @media (max-width: 380px) {
-                    font-size: 60px;
+                    font-size: 35px;
                 }
             }
             span {
